@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import static myApp.utilities.WaitUtils.waitFor;
 import static org.testng.Assert.assertTrue;
 
-public class CarRental_LoginTest {
+public class Day03_CarRental_LoginTest {
 
     /*
     When user navigates to https://www.speedyli.com/ homepage

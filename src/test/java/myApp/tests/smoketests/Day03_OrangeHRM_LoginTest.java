@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import static myApp.utilities.WaitUtils.waitFor;
 import static org.testng.Assert.assertTrue;
 
-public class OrangeHRM_LoginDynamicTest {
+public class Day03_OrangeHRM_LoginTest {
 
      /*
     When user navigates to https://opensource-demo.orangehrmlive.com/web/index.php/auth/login homepage
@@ -26,26 +26,28 @@ public class OrangeHRM_LoginDynamicTest {
      */
 
     protected WebDriver driver;
-    OrangeHRM_HomePage orangeHRMHomePage;
-    OrangeHRM_DashBoardPage orangeDashBoardPage;
+
+    OrangeHRM_HomePage orangeHRMHomePage = new OrangeHRM_HomePage();
+    OrangeHRM_DashBoardPage orangeDashBoardPage = new OrangeHRM_DashBoardPage();
 
     @BeforeMethod
     public void setUp(){
         driver = Driver.getDriver();
-        orangeHRMHomePage = new OrangeHRM_HomePage();
-        orangeDashBoardPage = new OrangeHRM_DashBoardPage();
     }
 
     @Test
-    public void orangeHRMDynamicTest(){
+    public void orangeHRMTest(){
 //        When user navigates to the homepage ( @BeforeMethod )
-        driver.get(ConfigReader.getProperty("orange_url"));
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 //        And User enters Username
+        orangeHRMHomePage.usernameInput.sendKeys(ConfigReader.getProperty("orange_username"));
+        waitFor(1);
 //        And User enters password
+        orangeHRMHomePage.passwordInput.sendKeys(ConfigReader.getProperty("orange_pass"));
+        waitFor(1);
 //        And User clicks on Login button
-
-        orangeHRMHomePage.login(ConfigReader.getProperty("orange_username"), ConfigReader.getProperty("orange_pass"));
-
+        orangeHRMHomePage.loginButton.click();
+        waitFor(1);
 //        Verify the login is successful
         assertTrue(driver.getCurrentUrl().contains("dashboard"));
         waitFor(1);
