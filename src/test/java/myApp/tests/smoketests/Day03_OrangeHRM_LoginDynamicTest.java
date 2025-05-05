@@ -64,7 +64,8 @@ public class Day03_OrangeHRM_LoginDynamicTest {
 
     @AfterMethod
     public void tearDown(){
-        Driver.closeDriver();
+        System.out.println("AfterMethod: closing driver");
+         Driver.closeDriver();
     }
 
 }

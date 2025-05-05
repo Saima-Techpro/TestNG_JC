@@ -27,12 +27,15 @@ public class Day03_OrangeHRM_LoginTest {
 
     protected WebDriver driver;
 
-    OrangeHRM_HomePage orangeHRMHomePage = new OrangeHRM_HomePage();
-    OrangeHRM_DashBoardPage orangeDashBoardPage = new OrangeHRM_DashBoardPage();
+    OrangeHRM_HomePage orangeHRMHomePage;
+    OrangeHRM_DashBoardPage orangeDashBoardPage;
 
     @BeforeMethod
     public void setUp(){
+//        System.out.println("BeforeMethod: getting driver");
         driver = Driver.getDriver();
+        orangeHRMHomePage = new OrangeHRM_HomePage();
+        orangeDashBoardPage = new OrangeHRM_DashBoardPage();
     }
 
     @Test
@@ -66,6 +69,7 @@ public class Day03_OrangeHRM_LoginTest {
 
     @AfterMethod
     public void tearDown(){
+        System.out.println("AfterMethod: closing driver");
         Driver.closeDriver();
     }
 

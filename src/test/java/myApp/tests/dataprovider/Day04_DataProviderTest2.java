@@ -32,11 +32,11 @@ Then verify the name field contains first name
 
     @BeforeMethod
     public void setUp(){
-        driver = Driver.getDriver();
+        this.driver = Driver.getDriver();
         dataTablesPage = new DataTablesPage();
     }
 
-    @Test (dataProvider = "userData" , dataProviderClass = DataProviderUtils.class)
+    @Test (dataProvider = "userData" , dataProviderClass = DataProviderUtils.class , groups = "Regression Suite")
     public void dataProviderTest2(String firstName , String lastName, String position, String office, String extension, String start_date, String salary){
 
 //        When user go to https://editor.datatables.net/

@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Running Groups" verbose="1">
+
+    <test name="Running Groups">
+        <groups>
+            <define name="">
+                <include name="Regression Suite"></include>
+            </define>
+
+
+            <!--
+
+        chatGPT:
+
+        If you just need to run specific groups in a particular test suite, the second approach (<run>) is sufficient and simpler.
+        If you want to create more complex test groupings, or you have multiple tests to run under a single logical group
+        (i.e., grouping existing groups into one new group), the approach (<define>) is more powerful.
+        Overall, the (<run>) approach  is more commonly used for straightforward test runs,
+        while the (<define>) approach  is beneficial for more complex scenarios involving the combination of multiple
+        groups from multiple classes.
+
+        -->
+<!--            <run>-->
+<!--                <include name="Regression Suite"></include>-->
+<!--            </run>-->
+        </groups>
+
+<!--        NOTE1: groups tag should be used first and then packages tag
+
+            NOTE2: We must use <packages>, <package> tags with "myApp.tests.*" because we need to
+             tell the address of where to look for this group called "Regression Suite"
+             Basically we are telling our xml file that go to ALL packages, look at ALL test methods
+             whichever has "Regression Suite" group mentioned, run that test -->
+
+        <packages>
+            <!--            * means run tests from ALL packages-->
+            <package name="myApp.tests.*"></package>
+        </packages>
+
+    </test>
+</suite>
+
+<!-- Candidate for "Regression Suite"
+     Day01_DependsOnGroups
+     Day02_ConfigReaderTest
+     Day03_CarRental_LoginTest
+     Day04_ExcelAutomationTest => testWithoutExcel
+     Day04_DataProviderTest2
+-->

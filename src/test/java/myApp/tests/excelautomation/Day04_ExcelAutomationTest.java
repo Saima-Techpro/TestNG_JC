@@ -36,11 +36,11 @@ Then verify the name field contains first name
 
     @BeforeMethod
     public void setUp(){
-        driver = Driver.getDriver();
+        this.driver = Driver.getDriver();
         dataTablesPage = new DataTablesPage();
     }
 
-    @Test
+    @Test (groups = "Regression Suite")
     public void testWithoutExcel(){
 
 //        When user go to https://editor.datatables.net/

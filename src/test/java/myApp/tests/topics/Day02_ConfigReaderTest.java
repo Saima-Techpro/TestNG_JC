@@ -8,7 +8,7 @@ import static org.testng.Assert.*;
 
 public class Day02_ConfigReaderTest {
 
-    @Test
+    @Test (groups = "Regression Suite")
     public static void configReaderTest(){
 
         // Navigate to google homepage

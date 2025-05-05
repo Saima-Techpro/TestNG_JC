@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Running Methods" verbose="1">
+    <test name="Running Methods">
+        <classes>
+            <class name="myApp.tests.dataprovider.Day04_DataProviderTest1">
+                <methods>
+                    <include name="test1"></include>
+                    <exclude name="test2"></exclude>
+                </methods>
+            </class>
+
+
+            <class name="myApp.tests.smoketests.Day03_CarRental_LoginTest">
+                <methods>
+                    <include name="carRentalTest"></include>
+                    <exclude name="carRentalTest2"></exclude>
+                </methods>
+            </class>
+        </classes>
+        
+    </test>
+</suite>

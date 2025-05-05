@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+<!--    ADDING LISTENERS -->
+
+    <listeners>
+        <listener class-name="myApp.utilities.ListenerUtils"></listener>
+    </listeners>
+
+
+    <test verbose="2" preserve-order="true"
+          name="/Users/saima/IdeaProjects/TestNG_JobCenter/src/test/java/myApp/tests/listeners/Day05_ListenersTest.java">
+        <classes>
+            <class name="myApp.tests.listeners.Day05_ListenersTest">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                    <include name="test4"/>
+                </methods>
+            </class>
+
+<!--            You can add multiple classes by using class tag -->
+            <class name="myApp.tests.excelautomation.Day04_ExcelAutomationTest"></class>
+        </classes>
+    </test>
+</suite>

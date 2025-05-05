@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Running classes" verbose="2">
+    <test name="Running Classes">
+        <classes>
+            <class name="myApp.tests.smoketests.Day03_OrangeHRM_LoginDynamicTest"></class>
+            <class name="myApp.tests.dataprovider.Day04_DataProviderTest2"></class>
+            <class name="myApp.tests.topics.Day02_ConfigReaderTest"></class>
+        </classes>
+        
+    </test>
+</suite>
