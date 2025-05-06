@@ -58,7 +58,7 @@ public class Day04_DataProviderTest1 {
 
 
     // BEST PRACTICE => DataProvider + Excel
-    @Test (dataProvider = "excelEmployeeData" , dataProviderClass = DataProviderUtils.class)
+    @Test (dataProvider = "excelEmployeeData" , dataProviderClass = DataProviderUtils.class )
     public void text4(String email, String password){
         System.out.println(email +" | "+ password);
     }

@@ -7,6 +7,6 @@
             <class name="myApp.tests.dataprovider.Day04_DataProviderTest2"></class>
             <class name="myApp.tests.topics.Day02_ConfigReaderTest"></class>
         </classes>
-        
+
     </test>
 </suite>

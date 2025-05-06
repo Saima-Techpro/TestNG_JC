@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Suite" verbose="1" parallel="methods" thread-count="5">
+
+<!--    NOTE: You can choose parallel="methods" if you want to do parallel testing on methods level-->
+
+    <!--    ADDING LISTENERS -->
+    <listeners>
+        <listener class-name="myApp.utilities.ListenerUtils"></listener>
+    </listeners>
+
+    <test name="Regression Suite at Class level">
+
+        <packages>
+<!--      * means ALL
+      Running Regression Tests in Parallel -->
+            <package name="myApp.*"></package>
+        </packages>
+    </test>
+
+
+
+</suite>
