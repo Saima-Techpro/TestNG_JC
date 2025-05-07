@@ -4,6 +4,8 @@ import myApp.pages.OrangeHRM_DashBoardPage;
 import myApp.pages.OrangeHRM_HomePage;
 import myApp.utilities.ConfigReader;
 import myApp.utilities.Driver;
+import myApp.utilities.ExcelUtils;
+import myApp.utilities.ExtentReportUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -40,7 +42,9 @@ public class Day03_OrangeHRM_LoginTest {
 
     @Test
     public void orangeHRMTest(){
-//        When user navigates to the homepage ( @BeforeMethod )
+
+        ExtentReportUtils.createTestReport("Smoke test Report", "User Login");
+
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 //        And User enters Username
         orangeHRMHomePage.usernameInput.sendKeys(ConfigReader.getProperty("orange_username"));
@@ -63,6 +67,9 @@ public class Day03_OrangeHRM_LoginTest {
 //        Verify the logout is successful
         assertTrue(orangeHRMHomePage.loginButton.isDisplayed());
         assertTrue(driver.getCurrentUrl().contains("login"));
+
+
+        ExtentReportUtils.flush();
 
 
     }

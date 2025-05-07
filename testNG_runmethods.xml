@@ -6,7 +6,7 @@
             <class name="myApp.tests.dataprovider.Day04_DataProviderTest1">
                 <methods>
                     <include name="test1"></include>
-                    <exclude name="test2"></exclude>
+                    <include name="test2"></include>
                 </methods>
             </class>
 

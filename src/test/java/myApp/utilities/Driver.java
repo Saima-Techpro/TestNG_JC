@@ -91,7 +91,7 @@ public class Driver {
     public static void closeDriver(){
         if (driver != null){
             driver.get().quit();
-            driver.remove();
+
         }
     }
 
