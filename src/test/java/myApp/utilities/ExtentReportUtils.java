@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static myApp.utilities.MediaUtils.takeScreenshotOfTheEntirePage;
+import static myApp.utilities.MediaUtils.takeScreenshotOfTheEntirePageAsString;
 
 public class ExtentReportUtils {
 
@@ -70,16 +71,17 @@ public class ExtentReportUtils {
     public static void fail(String message){
         extentTest.log(Status.FAIL,message);
     }
-//    //    This method will log AND captures screenshot AND attached them to the html report
-//    public static void passAndCaptureScreenshot(String message)  {
-//        try {
-//            extentTest
-//                    .log(Status.PASS,message)
-//                    .addScreenCaptureFromPath(takeScreenshotOfTheEntirePage());
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
+    //    This method will log AND captures screenshot AND attached them to the html report
+    public static void passAndCaptureScreenshot(String message)  {
+        try {
+            extentTest
+                    .log(Status.PASS,message)
+                    .addScreenCaptureFromPath(takeScreenshotOfTheEntirePageAsString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     /*
      MANDATORY STEP:
     FLUSH MUST BE USED AT THE VERY END TO GENERATE THE REPORT
