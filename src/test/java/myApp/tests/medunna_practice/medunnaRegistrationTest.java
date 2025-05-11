@@ -10,9 +10,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 
 import static myApp.utilities.WaitUtils.waitFor;
+
 
 public class medunnaRegistrationTest {
 
@@ -52,12 +52,11 @@ public class medunnaRegistrationTest {
         medunnaRegistrationPage = new MedunnaRegistrationPage();
 
         // Start the process of generating Extent Reports
-        ExtentReportUtils.createTestReport("Registration Test", "Testing the behaviour of SSN input field.");
-
+        //ExtentReportUtils.createTestReport("Registration Test", "Testing the behaviour of SSN input field.");
         // Test steps common for ALL tests can be executed through  @BeforeMethod
         // User navigates to Medunna Homepage
         Driver.getDriver().get(ConfigReader.getProperty("medunna_url"));
-        ExtentReportUtils.passAndCaptureScreenshot("User navigates to Medunna Homepage");
+      ExtentReportUtils.passAndCaptureScreenshot("User navigates to Medunna Homepage");
         // User clicks on userIcon
         medunnaHomePage.userIcon.click();
         waitFor(1);
@@ -68,7 +67,7 @@ public class medunnaRegistrationTest {
 
     @AfterMethod
     public void tearDown() {
-         ExtentReportUtils.flush();  // MANDATORY for report generation
+        ExtentReportUtils.flush();  // MANDATORY for report generation
          Driver.closeDriver();
 
     }
@@ -87,7 +86,7 @@ public class medunnaRegistrationTest {
         //1st way: click on another webElement
         medunnaRegistrationPage.firstNameInputField.click();
         waitFor(2);
-        ExtentReportUtils.info("User clicks on the next input field");
+        //ExtentReportUtils.info("User clicks on the next input field");
         // 2nd way: Use Keys.TAB
         // medunnaRegistrationPage.ssnInputField.sendKeys("22255-5432", Keys.TAB);
 
@@ -96,7 +95,6 @@ public class medunnaRegistrationTest {
 
         String errorMessage = medunnaRegistrationPage.invalidSsnMessage.getText();
         ExtentReportUtils.passAndCaptureScreenshot(errorMessage+ "! error message is displayed");
-
 
 
 

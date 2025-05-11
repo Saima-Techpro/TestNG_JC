@@ -8,8 +8,6 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import static myApp.utilities.MediaUtils.takeScreenshotOfTheEntirePage;
 import static myApp.utilities.MediaUtils.takeScreenshotOfTheEntirePageAsString;
 
 public class ExtentReportUtils {
