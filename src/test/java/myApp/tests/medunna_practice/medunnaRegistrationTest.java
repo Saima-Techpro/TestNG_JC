@@ -50,13 +50,14 @@ public class medunnaRegistrationTest {
         driver = Driver.getDriver();
         medunnaHomePage = new MedunnaHomePage();
         medunnaRegistrationPage = new MedunnaRegistrationPage();
+        ExtentReportUtils.createTestReport("Medunna", "Registration Page");
 
         // Start the process of generating Extent Reports
         //ExtentReportUtils.createTestReport("Registration Test", "Testing the behaviour of SSN input field.");
         // Test steps common for ALL tests can be executed through  @BeforeMethod
         // User navigates to Medunna Homepage
         Driver.getDriver().get(ConfigReader.getProperty("medunna_url"));
-      ExtentReportUtils.passAndCaptureScreenshot("User navigates to Medunna Homepage");
+        ExtentReportUtils.passAndCaptureScreenshot("User navigates to Medunna Homepage");
         // User clicks on userIcon
         medunnaHomePage.userIcon.click();
         waitFor(1);
